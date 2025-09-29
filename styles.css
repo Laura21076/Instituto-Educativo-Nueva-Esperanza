@@ -188,4 +188,22 @@ p{
     .embed-responsive {
         margin-bottom: 1.5rem;
     }
+
+}
+
+/* ============================================== */
+/* REGLAS PARA EL LOGO DEL HEADER (hero section)  */
+/* ============================================== */
+
+.logo-grande {
+    /* Un tamaño grande por defecto (Desktop) */
+    max-width: 250px; 
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .logo-grande {
+        /* Un poco más pequeño en móviles, pero aún prominente */
+        max-width: 180px; 
+    }
 }
