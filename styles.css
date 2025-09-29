@@ -1,0 +1,191 @@
+/* Colores Institucionales */
+:root {
+    --iene-blue: #003366; /* Azul Oscuro (Primario) */
+    --iene-yellow: #FFC300; /* Amarillo (Acento/Warning) */
+    --iene-gray: #F5F5F5; /* Gris Claro (Fondo) */
+    --iene-secondary: #004d99; /* Tono de Azul para títulos secundarios */
+    --iene-black: #000
+}
+
+/* Tipografía: Lato para encabezados */
+.playfair-font {
+    font-family: 'Merriweather', serif;  
+}
+
+body {
+    /* Merriweather para el cuerpo del texto */
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    padding-top: 56px; 
+}
+
+/* 1. Navegación (Navbar) */
+#main-nav {
+    background-color: var(--iene-blue);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    /* Transición para el efecto de sombra del JS */
+    transition: box-shadow 0.3s ease-in-out;
+}
+.navbar-brand {
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+.nav-link:hover, .dropdown-item:hover {
+    color: var(--iene-yellow) !important;
+}
+
+/* 2. Sección de Header/Héroe */
+.hero-section {
+    /* ¡IMPORTANTE! Nombre de la imagen de fondo confirmado */
+    height: 90vh; 
+    background: url('campus.jpeg') no-repeat center center/cover; 
+    position: relative;
+    padding-top: 15vh;
+}
+/* Capa de sombra para legibilidad */
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 0;
+}
+.hero-section h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: 500;
+}
+
+
+@media (min-width: 992px) {
+    .hero-section h1 { font-size: 4.5rem; }
+}
+
+/* 3. Ajustes de Colores y Componentes de Bootstrap */
+.text-primary { color: var(--iene-blue) !important; }
+.bg-primary { background-color: var(--iene-blue) !important; }
+.text-warning { color: var(--iene-yellow) !important; }
+.bg-gray { background-color: var(--iene-gray) !important; }
+.text-secondary { color: var(--iene-secondary) !important; }
+.text-black { color: var(--iene-black) !important; }
+
+
+.btn-warning {
+    background-color: var(--iene-yellow);
+    border-color: var(--iene-yellow);
+    color: var(--iene-blue); 
+    transition: all 0.3s;
+}
+.btn-warning:hover {
+    background-color: #e6b300; 
+    border-color: #e6b300;
+    transform: scale(1.05);
+}
+
+/* 4. Estilos de Cards (Oferta y Perfil de Egresado) */
+.card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 51, 102, 0.15) !important; 
+}
+
+p{
+    text-align: justify;
+    justify-content: center;
+}
+
+/* 5. Estilos de Identidad */
+.badge-list .badge {
+    padding: 0.8em 1.2em;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+/* 6. Estilos de Contacto */
+/* Asegura que el iframe de Google Maps sea responsivo */
+.embed-responsive {
+    position: relative;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 56.25%; /* 16:9 ratio, ajustado por altura del iframe a 300px */
+}
+.embed-responsive iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 5px;
+}
+
+/* 7. Footer - Enlaces Sociales */
+.social-links a {
+    transition: color 0.3s;
+}
+.social-links a:hover {
+    color: var(--iene-yellow) !important;
+}
+
+/* NUEVO: Indicador de que la imagen es clickeable */
+.cursor-pointer {
+    cursor: pointer;
+}
+.cursor-pointer:hover {
+    opacity: 0.9;
+    box-shadow: 0 0 10px rgba(0, 51, 102, 0.5);
+}
+
+/* ============================================== */
+/* Ajustes de Responsividad (Móvil)      */
+/* ============================================== */
+
+@media (max-width: 768px) {
+    /* Ajuste en el Banner Principal para Móviles */
+    .hero-section {
+        height: 80vh; 
+        background-attachment: scroll; 
+    }
+    .hero-section h1 {
+        font-size: 2rem; 
+    }
+    .hero-section p.lead {
+        font-size: 1rem !important; 
+    }
+
+    /* Ajuste de Espacios y Textos Generales */
+    h2.display-5, h3.playfair-font {
+        font-size: 1.8rem !important; 
+    }
+    .fs-5 {
+        font-size: 1rem !important;
+    }
+    .lead {
+        font-size: 1.1rem !important;
+    }
+
+    /* Ajuste de Cards */
+    .card-body {
+        padding: 1rem;
+    }
+
+    /* Secciones de Identidad y Contacto */
+    .badge-list .badge {
+        display: block; 
+        margin-bottom: 0.5rem;
+    }
+    
+    /* Para móviles, el mapa se apila sobre el formulario */
+    .embed-responsive {
+        margin-bottom: 1.5rem;
+    }
+}
